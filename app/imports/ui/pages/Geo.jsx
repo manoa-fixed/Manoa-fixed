@@ -15,7 +15,6 @@ class Geo extends React.Component {
           <Grid.Column width={8}>
             <Header as='h1' inverted>Attach a Geotag</Header>
             <Header as='h3' inverted>Help us maintain our UH Manoa campus</Header>
-            <Image size='medium' src="/images/report-button.png"/>
           </Grid.Column>
 
         </Grid>
