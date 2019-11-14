@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Image, Header } from 'semantic-ui-react';
+import { Grid, Image, Header, Button } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -15,7 +16,9 @@ class Landing extends React.Component {
           <Grid.Column width={8}>
             <Header as='h1' inverted>Welcome to Manoa Fixed</Header>
             <Header as='h3' inverted>See something in need of a repair?</Header>
-            <Header as='h3' inverted>Sign-In... then click on our Add Report button above!</Header>
+            <Header as='h3' inverted>Click on our Add Report button below!</Header>
+            <Button inverted color="orange" size='massive' as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Report
+            </Button>
           </Grid.Column>
 
         </Grid>
