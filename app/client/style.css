@@ -1,4 +1,6 @@
 .wallpaper-background {
   background: url('images/rainbow.jpg') no-repeat center center fixed;
   background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 200px;
 }
