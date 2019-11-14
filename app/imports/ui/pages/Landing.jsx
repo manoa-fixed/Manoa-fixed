@@ -14,8 +14,8 @@ class Landing extends React.Component {
 
           <Grid.Column width={8}>
             <Header as='h1' inverted>Welcome to Manoa Fixed</Header>
-            <Header as='h3' inverted>Help us maintain our UH Manoa campus</Header>
-            <Image size='medium' src="/images/report-button.png"/>
+            <Header as='h3' inverted>See something in need of a repair?</Header>
+            <Header as='h3' inverted>Sign-In... then click on our Add Report button above!</Header>
           </Grid.Column>
 
         </Grid>
