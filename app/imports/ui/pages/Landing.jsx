@@ -16,7 +16,7 @@ class Landing extends React.Component {
           <Grid.Column width={8}>
             <Header as='h1' inverted>Welcome to Manoa Fixed</Header>
             <Header as='h3' inverted>See something in need of a repair?</Header>
-            <Header as='h3' inverted>Click on our Add Report button below!</Header>
+            <Header as='h3' inverted>Click on the button below to begin a report!</Header>
             <Button inverted color="orange" size='massive' as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Report
             </Button>
           </Grid.Column>
