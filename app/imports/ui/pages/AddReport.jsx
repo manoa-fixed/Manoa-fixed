@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
+import SelectField from 'uniforms-semantic/SelectField';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
@@ -16,7 +17,11 @@ const formSchema = new SimpleSchema({
   email: String,
   location: String,
   image: String,
-  tag: String,
+  tag: {
+    type: String,
+    allowedValues: ['none', 'vandalism', 'water damage', 'fire damage', 'disrepair', 'natural damages'],
+    defaultValue: 'none',
+  },
   description: String,
     });
 
@@ -50,7 +55,7 @@ class AddReport extends React.Component {
                 <TextField name='email'/>
                 <TextField name='location'/>
                 <TextField name='image'/>
-                <TextField name='tag'/>
+                <SelectField name='tag'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
