@@ -10,7 +10,11 @@ const ReportsSchema = new SimpleSchema({
   email: String,
   location: String,
   image: String,
-  tag: String,
+  tag: {
+    type: String,
+    allowedValues: ['none', 'vandalism', 'water damage', 'fire damage', 'disrepair', 'natural damages'],
+    defaultValue: 'none',
+  },
   description: String,
   owner: String,
 }, { tracker: Tracker });
