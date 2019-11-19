@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import Note from './Note';
 import AddNote from './AddNote';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the List Stuff table. See pages/ListReports.jsx. */
 class Contact extends React.Component {
   render() {
     return (
