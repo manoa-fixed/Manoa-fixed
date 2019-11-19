@@ -18,8 +18,7 @@ const formSchema = new SimpleSchema({
   image: String,
   tag: String,
   description: String,
-    },
-);
+    });
 
 /** Renders the Page for adding a document. */
 class AddReport extends React.Component {

@@ -12,6 +12,7 @@ const ReportsSchema = new SimpleSchema({
   image: String,
   tag: String,
   description: String,
+  owner: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
