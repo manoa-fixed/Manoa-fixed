@@ -31,7 +31,6 @@ class About extends React.Component {
                     activeClassName="active" exact to="/add" key='add'>Add Report
             </Button>
           </Grid.Column>
-
         </Grid>
         </div>
     );

@@ -5,7 +5,7 @@ import { Grid, Image, Header } from 'semantic-ui-react';
 class Geo extends React.Component {
   render() {
     return (
-        <div className='wallpaper-background'>
+        <div>
         <Grid verticalAlign='middle' textAlign='center' container>
 
           <Grid.Column width={4}>
