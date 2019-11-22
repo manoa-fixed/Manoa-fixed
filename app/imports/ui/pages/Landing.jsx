@@ -21,6 +21,7 @@ class Landing extends React.Component {
             <Button inverted color="orange" size='massive' as={NavLink}
                     activeClassName="active" exact to="/add" key='add'>Add Report
             </Button>
+
           </Grid.Column>
 
         </Grid>

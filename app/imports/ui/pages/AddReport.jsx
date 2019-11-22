@@ -39,6 +39,14 @@ class AddReport extends React.Component {
           } else {
             swal('Success', 'Item added successfully', 'success');
             formRef.reset();
+            Meteor.call(
+                'sendEmail',
+                'Yuuma <yuma2@hawaii.edu>',
+                'bob@example.com',
+                'Hello from Meteor!',
+                'This is a test of Email.send.',
+                (err, result) => { console.log(err, result); },
+            );
           }
         });
   }
