@@ -9,19 +9,19 @@ class About extends React.Component {
         <div className='wallpaper-background'>
         <Grid verticalAlign='middle' textAlign='Left' container>
           <Grid.Column width={15}>
-            <h1> INTRODUCTION </h1>
-            <h3> Welcome! Manoa Fixed is an online web-tool designed to help create and organize campus maintenance related
+            <Header as='h1' inverted> INTRODUCTION </Header>
+            <Header as='h3' inverted>> Welcome! Manoa Fixed is an online web-tool designed to help create and organize campus maintenance related
             reports into one single source. If you are on campus and see anything that needs upkeeping (potholes, broken railings,
             flickering lights, etc), please feel free to click on our Add Report Button below to begin a report. Also we have now
-            incorporated Lost & Found reports!</h3>
+            incorporated Lost & Found reports!</>
 
             <Button inverted color="orange" size='massive' as={NavLink}
                     activeClassName="active" exact to="/add" key='add'>Add Report
             </Button>
 
-            <h1> About the Developers </h1>
-            <h3> This app was developed by three ICS 314 (Software Engineering I) students over the course of several weeks.
-              View our project page [here](https://manoa-fixed.github.io/)</h3>
+            <Header as='h1' inverted>> About the Developers </Header>
+            <Header as='h3' inverted>> This app was developed by three ICS 314 (Software Engineering I) students over the course of several weeks.
+              View our project page [here](https://manoa-fixed.github.io/)</Header>
           </Grid.Column>
         </Grid>
         </div>
