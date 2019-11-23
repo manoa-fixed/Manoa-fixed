@@ -14,12 +14,14 @@ class About extends React.Component {
             reports into one single source. If you are on campus and see anything that needs upkeeping (potholes, broken railings,
             flickering lights, etc), please feel free to click on our Add Report Button below to begin a report. Also we have now
             incorporated Lost & Found reports!</h3>
-            <h1> About the Developers </h1>
-            <h3> This app was developed by three ICS 314 (Software Engineering I) students over the course of several weeks.
-            View our project page [here](https://manoa-fixed.github.io/)</h3>
+
             <Button inverted color="orange" size='massive' as={NavLink}
                     activeClassName="active" exact to="/add" key='add'>Add Report
             </Button>
+
+            <h1> About the Developers </h1>
+            <h3> This app was developed by three ICS 314 (Software Engineering I) students over the course of several weeks.
+              View our project page [here](https://manoa-fixed.github.io/)</h3>
           </Grid.Column>
         </Grid>
         </div>
