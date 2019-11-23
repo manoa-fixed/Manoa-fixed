@@ -63,6 +63,9 @@ class AddReport extends React.Component {
             </AutoForm>
           </Grid.Column>
         </Grid>
+
+
+
     );
   }
 }
