@@ -19,8 +19,8 @@ const formSchema = new SimpleSchema({
   image: String,
   tag: {
     type: String,
-    allowedValues: ['none', 'vandalism', 'water damage', 'fire damage', 'disrepair', 'natural damages'],
-    defaultValue: 'none',
+    allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants', 'Lighting', 'Lost & Found', 'Miscellaneous'],
+    defaultValue: 'Structural',
   },
   description: String,
     });
@@ -39,6 +39,14 @@ class AddReport extends React.Component {
           } else {
             swal('Success', 'Item added successfully', 'success');
             formRef.reset();
+            Meteor.call(
+                'sendEmail',
+                'Yuuma <yuma2@hawaii.edu>',
+                'bob@example.com',
+                'Hello from Meteor!',
+                'This is a test of Email.send.',
+                (err, result) => { console.log(err, result); },
+            );
           }
         });
   }
@@ -63,6 +71,9 @@ class AddReport extends React.Component {
             </AutoForm>
           </Grid.Column>
         </Grid>
+
+
+
     );
   }
 }

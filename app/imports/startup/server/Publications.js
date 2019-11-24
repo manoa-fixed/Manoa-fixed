@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Reports } from '../../api/report/Reports';
+import { ImageData } from '../../api/imagedata/imagedata.js';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
@@ -35,4 +36,8 @@ Meteor.publish('ReportsAdmin', function publish() {
     return Reports.find();
   }
   return this.ready();
+});
+
+Meteor.publish('ImageData', function publishImageData() {
+  return ImageData.find();
 });
