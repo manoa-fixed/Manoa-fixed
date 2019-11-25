@@ -52,7 +52,8 @@ class About extends React.Component {
             <Header as='h1' inverted> About the Developers... </Header>
             <Header as='h3' inverted> This app was developed by three ICS 314
               (Software Engineering I) students over the course of several weeks.
-              View our project page [here](https://manoa-fixed.github.io/)</Header>
+              View our project page <a href ='https://manoa-fixed.github.io/' >
+                [here](https://manoa-fixed.github.io/)</a></Header>
           </Grid.Column>
         </Grid>
         </div>
