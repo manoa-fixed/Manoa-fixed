@@ -1,10 +1,15 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListReports.jsx. */
 class ReportsItem extends React.Component {
+  removeItem(docID) {
+    console.log(`Deleted item: ${docID}`);
+    this.props.report.remove(docID);
+  }
+
   render() {
     return (
         <Card>
@@ -22,6 +27,11 @@ class ReportsItem extends React.Component {
             </Card.Description>
             <Card.Content extra>
               <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
+            </Card.Content>
+            <Card.Content align='right'>
+              <Button icon onClick={() => this.removeItem(this.props.report._id)}>
+                <Icon name='trash alternate outline'/>
+              </Button>
             </Card.Content>
           </Card.Content>
         </Card>
