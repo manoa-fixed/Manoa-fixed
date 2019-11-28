@@ -1,11 +1,15 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Icon, Input, Button } from 'semantic-ui-react';
 import { Reports } from '/imports/api/report/Reports';
 import ReportsItem from '/imports/ui/components/ReportsItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
+const HoverText = styled.b`color: #000; :hover {color: #ffffff;cursor: pointer;}
+`;
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListReports extends React.Component {
 
@@ -20,6 +24,12 @@ class ListReports extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center" inverted>List Reports</Header>
+          <Header as="h3"><Icon name = 'search'/>
+            <Input placeholder='Search...' />
+            <Button color="orange" size='massive' as={NavLink}
+                    activeClassName="active" exact to="/add" key='add'><HoverText>Go</HoverText>
+            </Button>
+             </Header>
           <Card.Group>
             {this.props.reports.map((report, index) => <ReportsItem key={index} report={report}/>)}
           </Card.Group>

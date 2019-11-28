@@ -18,6 +18,9 @@ class About extends React.Component {
           <Grid verticalAlign='middle' textAlign='Left' container style={darkbstyle}>
             <Grid.Column width={15}>
               <Header as='h1' inverted>Welcome to Manoa Fixed</Header>
+              <iframe width="1120" height="630" src="https://www.youtube.com/embed/ctWDAdQ81B8" frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen></iframe>
               <Header as='h3' inverted>
                 This is an online application to report problems that happends at UH.
                 Some of the common problems are: Broken lights, Broken equiptment, lost item,
