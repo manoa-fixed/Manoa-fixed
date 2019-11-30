@@ -32,7 +32,7 @@ class ReportsItemAdmin extends React.Component {
               <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
             </Card.Content>
             <Card.Content align='right'>
-              <Button icon onClick={() => this.removeItem(this.props.report._id)}>
+              <Button icon onClick={event => this.removeItem(event)}>
                 <Icon name='trash alternate outline'/>
               </Button>
             </Card.Content>

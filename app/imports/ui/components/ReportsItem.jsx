@@ -7,7 +7,7 @@ import { withRouter, Link } from 'react-router-dom';
 class ReportsItem extends React.Component {
   removeItem(docID) {
     console.log(`Deleted item: ${docID}`);
-    this.props.report.remove(docID);
+    this.props.Reports.remove(docID);
   }
 
   render() {
@@ -42,6 +42,7 @@ class ReportsItem extends React.Component {
 /** Require a document to be passed to this component. */
 ReportsItem.propTypes = {
   report: PropTypes.object.isRequired,
+  Reports: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

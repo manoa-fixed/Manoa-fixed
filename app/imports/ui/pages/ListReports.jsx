@@ -21,7 +21,7 @@ class ListReports extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>List Reports</Header>
           <Card.Group>
-            {this.props.reports.map((report, index) => <ReportsItem key={index} report={report}/>)}
+            {this.props.reports.map((report, index) => <ReportsItem key={index} report={report} Reports={Reports}/>)}
           </Card.Group>
         </Container>
     );
