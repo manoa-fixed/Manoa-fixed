@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Icon, Input, Button } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Input, Button } from 'semantic-ui-react';
 import { Reports } from '/imports/api/report/Reports';
 import ReportsItem from '/imports/ui/components/ReportsItem';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const HoverText = styled.b`color: #000; :hover {color: #ffffff;cursor: pointer;}
+const HoverText = styled.b`color: #000; :hover {color: #ffffff;cursor: pointer;}z
 `;
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListReports extends React.Component {
