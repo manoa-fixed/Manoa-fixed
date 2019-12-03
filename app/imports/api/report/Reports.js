@@ -12,15 +12,8 @@ const ReportsSchema = new SimpleSchema({
   image: String,
   tag: {
     type: String,
-<<<<<<< Updated upstream
-    allowedValues: ['none', 'vandalism', 'water damage', 'fire damage', 'disrepair', 'natural damages'],
-    defaultValue: 'none',
-=======
     allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
       'Lighting', 'Lost & Found', 'Miscellaneous'],
-    defaultValue: 'Structural',
->>>>>>> Stashed changes
-    allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants', 'Lighting', 'Lost & Found', 'Miscellaneous'],
     defaultValue: 'Structural',
   },
   description: String,
