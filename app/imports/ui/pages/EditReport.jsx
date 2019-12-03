@@ -45,6 +45,7 @@ class EditReport extends React.Component {
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
+                <HiddenField name='status' />
                 <HiddenField name='owner' />
               </Segment>
             </AutoForm>

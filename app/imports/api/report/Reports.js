@@ -16,6 +16,11 @@ const ReportsSchema = new SimpleSchema({
       'Lighting', 'Lost & Found', 'Miscellaneous'],
     defaultValue: 'Structural',
   },
+  status: {
+    type: String,
+    allowedValues: ['Pending', 'In-Progress...', 'Fixed'],
+    defaultValue: 'Pending',
+  },
   description: String,
   owner: String,
 }, { tracker: Tracker });
