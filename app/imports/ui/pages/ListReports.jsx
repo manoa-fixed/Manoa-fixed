@@ -24,9 +24,9 @@ class ListReports extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center" inverted>List Reports</Header>
-          <Header as="h3"><Icon name = 'search'/>
-            <Input placeholder='Search...' />
-            <Button color="orange" size='massive' as={NavLink}
+          <Header as="h3">
+            <Input Icon inverted name = 'search' placeholder='Search...' />
+            <Button color="red" size='large' as={NavLink}
                     activeClassName="active" exact to="/add" key='add'><HoverText>Go</HoverText>
             </Button>
              </Header>

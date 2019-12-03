@@ -1,16 +1,24 @@
 import React from 'react';
-import { Card, Image, Button, Icon } from 'semantic-ui-react';
+import { Card, Image, Button, Icon, Confirm } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 class ReportsItemAdmin extends React.Component {
-  removeItem(docID) {
-    console.log(`Deleted item: ${docID}`);
-    this.props.Reports.remove(docID);
+  state = { open: false }
+
+  show = () => this.setState({ open: true })
+
+  removeItem = () => {
+    console.log(`Deleted item: ${this.props.report._id}`);
+    this.props.Reports.remove(this.props.report._id);
+    this.setState({ open: false });
   }
 
+  handleCancel = () => this.setState({ open: false })
+
   render() {
+    const { open } = this.state;
     return (
         <Card>
           <Card.Content>
@@ -32,9 +40,14 @@ class ReportsItemAdmin extends React.Component {
               <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
             </Card.Content>
             <Card.Content align='right'>
-              <Button icon onClick={event => this.removeItem(event)}>
+              <Button icon onClick={this.show}>
                 <Icon name='trash alternate outline'/>
               </Button>
+              <Confirm
+                  open={open}
+                  onCancel={this.handleCancel}
+                  onConfirm={this.removeItem}
+              />
             </Card.Content>
           </Card.Content>
         </Card>
