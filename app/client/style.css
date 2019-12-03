@@ -8,3 +8,8 @@
 h1 {
   font-size: 80px;
 }
+
+.ui.red.massive.button.reportButton:hover{
+  background-color:yellow !important;
+  color:red !important;
+}
