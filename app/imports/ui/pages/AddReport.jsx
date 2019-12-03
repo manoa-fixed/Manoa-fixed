@@ -14,19 +14,6 @@ import SimpleSchema from 'simpl-schema';
 import { Reports } from '/imports/api/report/Reports';
 
 
-/** Create a schema to specify the structure of the data to appear in the form. */
-const formSchema = new SimpleSchema({
-  email: String,
-  location: String,
-  image: String,
-  tag: {
-    type: String,
-    allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants', 'Lighting', 'Lost & Found', 'Miscellaneous'],
-    defaultValue: 'Structural',
-  },
-  description: String,
-    });
-
 /** Renders the Page for adding a document. */
 class AddReport extends React.Component {
 
