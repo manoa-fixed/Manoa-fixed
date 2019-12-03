@@ -57,9 +57,11 @@ class About extends React.Component {
                 incorporated Lost & Found reports!</Header>
 
 
-              <Button color="orange" size='massive' as={NavLink}
-                      activeClassName="active" exact to="/add" key='add'><HoverText>Add Report</HoverText>
-              </Button>
+
+            <Button className="reportButton" color="red" size='massive' as={NavLink}
+                    activeClassName="active" exact to="/add" key='add'>Add Report
+            </Button>
+
 
               <Header as='h1' inverted> About the Developers... </Header>
               <Header as='h3' inverted> This app was developed by three ICS 314
