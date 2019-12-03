@@ -38,7 +38,7 @@ class ReportsItemAdmin extends React.Component {
               {this.props.report.owner}
             </Card.Content>
             <Card.Content extra>
-              <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
+              <Link to={`/adminedit/${this.props.report._id}`}>Edit</Link>
             </Card.Content>
             <Card.Content align='right'>
               <Button icon onClick={this.show}>
