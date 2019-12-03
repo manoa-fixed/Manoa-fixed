@@ -33,3 +33,9 @@ alanning:roles                   # https://github.com/alanning/meteor-roles
 
 # Prototyping only
 insecure@1.0.7                   # Enable client-side manipulation of Mongo collections.
+<<<<<<< Updated upstream
+=======
+email
+check
+jquery
+>>>>>>> Stashed changes
