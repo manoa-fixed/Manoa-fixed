@@ -13,7 +13,7 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
 import { Reports } from '/imports/api/report/Reports';
 
-<<<<<<< Updated upstream
+
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
   email: String,
@@ -26,8 +26,6 @@ const formSchema = new SimpleSchema({
   },
   description: String,
     });
-=======
->>>>>>> Stashed changes
 
 /** Renders the Page for adding a document. */
 class AddReport extends React.Component {
