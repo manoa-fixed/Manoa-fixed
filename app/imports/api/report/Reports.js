@@ -17,6 +17,11 @@ const ReportsSchema = new SimpleSchema({
     defaultValue: 'Structural',
   },
   description: String,
+  status: {
+    type: String,
+    allowedValues: ['Pending', 'In-Progress...', 'Fixed!'],
+    defaultValue: 'Pending',
+  },
   owner: String,
 }, { tracker: Tracker });
 

@@ -19,6 +19,7 @@ class ReportsItem extends React.Component {
 
   render() {
     const { open } = this.state;
+    console.log(this.props.report);
     return (
         <Card>
           <Card.Content>
@@ -33,6 +34,7 @@ class ReportsItem extends React.Component {
             <Card.Description>
               {this.props.report.description}
             </Card.Description>
+            <Card.Meta>{this.props.report.status}</Card.Meta>
             <Card.Content extra>
               <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
             </Card.Content>
