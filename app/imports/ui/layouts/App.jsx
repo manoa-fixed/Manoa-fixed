@@ -12,6 +12,7 @@ import ListReportsAdmin from '../pages/ListReportsAdmin';
 import AddReport from '../pages/AddReport';
 import EditReport from '../pages/EditReport';
 import NotFound from '../pages/NotFound';
+import AdminEditReport from '../pages/AdminEditReport';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
@@ -37,6 +38,7 @@ class App extends React.Component {
               <ProtectedRoute path="/listall" component={ListReportsAll}/>
               <ProtectedRoute path="/add" component={AddReport}/>
               <ProtectedRoute path="/edit/:_id" component={EditReport}/>
+              <ProtectedRoute path="/adminedit/:_id" component={AdminEditReport}/>
               <AdminProtectedRoute path="/admin" component={ListReportsAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>

@@ -3,7 +3,6 @@ import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import { Reports, ReportsSchema } from '/imports/api/report/Reports';
 import swal from 'sweetalert';
 import AutoForm from 'uniforms-semantic/AutoForm';
-import TextField from 'uniforms-semantic/TextField';
 import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
@@ -12,15 +11,15 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2';
-import LongTextField from 'uniforms-semantic/LongTextField'; // required for Uniforms
+
 
 /** Renders the Page for editing a single document. */
 class EditReport extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { email, location, image, tag, description, _id } = data;
-    Reports.update(_id, { $set: { email, location, image, tag, description } }, (error) => (error ?
+    const { status, _id } = data;
+    Reports.update(_id, { $set: { status } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -35,17 +34,12 @@ class EditReport extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>Edit Stuff</Header>
+            <Header as="h2" textAlign="center" inverted>Set Status</Header>
             <AutoForm schema={ReportsSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
-                <TextField name='email'/>
-                <TextField name='location'/>
-                <TextField name='image'/>
-                <SelectField name='tag'/>
-                <LongTextField name='description'/>
+                <SelectField name='status'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='status' />
                 <HiddenField name='owner' />
               </Segment>
             </AutoForm>
