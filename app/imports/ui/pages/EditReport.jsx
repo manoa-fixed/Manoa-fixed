@@ -35,12 +35,11 @@ class EditReport extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>Edit Stuff</Header>
+            <Header as="h2" textAlign="center" inverted>Edit Report</Header>
             <AutoForm schema={ReportsSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
                 <TextField name='email'/>
                 <TextField name='location'/>
-                <TextField name='image'/>
                 <SelectField name='tag'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
