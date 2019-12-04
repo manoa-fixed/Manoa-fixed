@@ -2,10 +2,9 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Reports } from '/imports/api/report/Reports';
-import ReportsItemAdmin from '/imports/ui/components/ReportsItemAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-
+import PublicReportsItem from '../components/PublicReportsItem';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListReports extends React.Component {
 
@@ -21,7 +20,7 @@ class ListReports extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>List Reports</Header>
           <Card.Group>
-            {this.props.reports.map((report, index) => <ReportsItemAdmin key={index} report={report} Reports={Reports}
+            {this.props.reports.map((report, index) => <PublicReportsItem key={index} report={report} Reports={Reports}
             />)}
           </Card.Group>
         </Container>
@@ -38,7 +37,7 @@ ListReports.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('ReportsAdmin');
+  const subscription = Meteor.subscribe('Reportall');
   return {
     reports: Reports.find({}).fetch(),
     ready: subscription.ready(),
