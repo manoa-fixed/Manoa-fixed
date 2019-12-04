@@ -28,8 +28,9 @@ class ReportsItemAdmin extends React.Component {
                 src={this.props.report.image}
             />
             <Card.Header>{this.props.report.Location}</Card.Header>
-            <Card.Meta>{this.props.report.tag}</Card.Meta>
+            <Card.Header>{this.props.report.tag}</Card.Header>
             <Card.Meta>{this.props.report.email}</Card.Meta>
+            <Card.Meta>{this.props.report.status}</Card.Meta>
             <Card.Description>
               {this.props.report.description}
             </Card.Description>
@@ -37,7 +38,7 @@ class ReportsItemAdmin extends React.Component {
               {this.props.report.owner}
             </Card.Content>
             <Card.Content extra>
-              <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
+              <Link to={`/adminedit/${this.props.report._id}`}>Edit</Link>
             </Card.Content>
             <Card.Content align='right'>
               <Button icon onClick={this.show}>
