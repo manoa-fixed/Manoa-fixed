@@ -7,7 +7,6 @@ const Reports = new Mongo.Collection('Reports');
 
 /** Define a schema to specify the structure of each document in the collection. */
 const ReportsSchema = new SimpleSchema({
-  email: String,
   location: String,
   image: String,
   tag: {
