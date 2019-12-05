@@ -13,7 +13,7 @@ const ReportsSchema = new SimpleSchema({
   tag: {
     type: String,
     allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
-      'Lighting', 'Lost & Found', 'Miscellaneous'],
+      'Electrical', 'Lost & Found', 'Miscellaneous'],
     defaultValue: 'Structural',
   },
   status: {

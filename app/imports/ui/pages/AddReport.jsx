@@ -5,6 +5,7 @@ import TextField from 'uniforms-semantic/TextField';
 import SelectField from 'uniforms-semantic/SelectField';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
+import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { openCloudinaryWidget } from '../components/open-cloudinary-widget';
 import swal from 'sweetalert';
@@ -24,11 +25,11 @@ class AddReport extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { email, location, tag, description } = data;
+    const { email, location, tag, description, status } = data;
     const image = this.state.picture;
     const owner = Meteor.user().username;
     console.log(data);
-    Reports.insert({ email, location, image, tag, description, owner },
+    Reports.insert({ email, location, image, tag, description, owner, status },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
@@ -77,13 +78,18 @@ class AddReport extends React.Component {
       tag: {
         type: String,
         allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
-          'Lighting', 'Lost & Found', 'Miscellaneous'],
+          'Electrical', 'Lost & Found', 'Miscellaneous'],
         defaultValue: 'Structural',
       },
       description: String,
       image: {
         type: String,
         defaultValue: picture,
+      },
+      status: {
+        type: String,
+        allowedValues: ['Pending', 'In-Progress...', 'Fixed!'],
+        defaultValue: 'Pending',
       },
     });
 
@@ -104,6 +110,7 @@ class AddReport extends React.Component {
                 <TextField name='email'/>
                 <TextField name='location'/>
                 <SelectField name='tag'/>
+                <HiddenField name='status'/>
                 </Form.Group>
                 <Form.Group widths={'equal'}>
                 <React.Fragment>

@@ -19,6 +19,7 @@ class ReportsItem extends React.Component {
 
   render() {
     const { open } = this.state;
+    console.log(this.props.report);
     return (
         <Card>
           <Card.Content>
@@ -27,10 +28,10 @@ class ReportsItem extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
-            <Card.Header>{this.props.report.Location}</Card.Header>
             <Card.Header>{this.props.report.tag}</Card.Header>
-            <Card.Meta>{this.props.report.email}</Card.Meta>
-            <Card.Meta>{this.props.report.status}</Card.Meta>
+            <Card.Meta>{`Location: ${this.props.report.location}`}</Card.Meta>
+            <Card.Meta>{`Email: ${this.props.report.email}`}</Card.Meta>
+            <Card.Meta>{`Status: ${this.props.report.status}`}</Card.Meta>
             <Card.Description>
               {this.props.report.description}
             </Card.Description>

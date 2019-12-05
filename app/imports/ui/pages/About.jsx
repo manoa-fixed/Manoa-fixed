@@ -57,7 +57,6 @@ class About extends React.Component {
                 incorporated Lost & Found reports!</Header>
 
 
-
             <Button className="reportButton" color="red" size='massive' as={NavLink}
                     activeClassName="active" exact to="/add" key='add'>Add Report
             </Button>
@@ -67,7 +66,7 @@ class About extends React.Component {
               <Header as='h3' inverted> This app was developed by three ICS 314
                 (Software Engineering I) students over the course of several weeks.
                 View our project page <a href='https://manoa-fixed.github.io/'>
-                  [here](https://manoa-fixed.github.io/)</a></Header>
+                  [here]</a></Header>
             </Grid.Column>
           </Grid>
         </div>
