@@ -8,8 +8,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const HoverText = styled.b`color: #000; :hover {color: #ffffff;cursor: pointer;}z
-`;
+const HoverText = styled.b`color: #000; :hover {color: #ffffff;cursor: pointer;}z`;
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListReports extends React.Component {
 
@@ -26,7 +25,7 @@ class ListReports extends React.Component {
           <Header as="h2" textAlign="center" inverted>List Reports</Header>
           <Header as="h3">
             <Input Icon inverted name = 'search' placeholder='Search...' />
-            <Button color="orange" size='large' as={NavLink}
+            <Button color="orange" size='big' as={NavLink}
                     activeClassName="active" exact to="/add" key='add'><HoverText>Go</HoverText>
             </Button>
              </Header>
