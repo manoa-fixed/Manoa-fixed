@@ -29,7 +29,7 @@ class ReportsItemAdmin extends React.Component {
             />
             <Card.Header>{this.props.report.tag}</Card.Header>
             <Card.Meta>{`Location: ${this.props.report.location}`}</Card.Meta>
-            <Card.Meta>{`Email: ${this.props.report.email}`}</Card.Meta>
+            <Card.Meta>{`Email: ${this.props.report.owner}`}</Card.Meta>
             <Card.Meta>{`Status: ${this.props.report.status}`}</Card.Meta>
             <Card.Description>
               {this.props.report.description}

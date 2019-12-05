@@ -10,7 +10,7 @@ class Landing extends React.Component {
         <Grid verticalAlign='middle' textAlign='center' container>
 
           <Grid.Column width={4}>
-            <Image size='very large' src="/images/Manoa-Fixed-Logo.png"/>
+            <Image size='Huge' src="/images/Manoa-Fixed-Logo.png"/>
           </Grid.Column>
 
           <Grid.Column width={8}>
