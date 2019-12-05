@@ -13,3 +13,8 @@ h1 {
   background-color:yellow !important;
   color:red !important;
 }
+
+p {
+  padding-top: 0%;
+  padding-bottom: 40%;
+}
