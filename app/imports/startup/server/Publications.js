@@ -41,3 +41,9 @@ Meteor.publish('ReportsAdmin', function publish() {
 Meteor.publish('ImageData', function publishImageData() {
   return ImageData.find();
 });
+Meteor.publish('Reportall', function publish() {
+  if (this.userId) {
+    return Reports.find({});
+  }
+  return this.ready();
+});

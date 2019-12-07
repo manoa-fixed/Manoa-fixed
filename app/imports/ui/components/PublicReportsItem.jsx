@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, Image, Button, Icon, Confirm } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
-class ReportsItemAdmin extends React.Component {
+/** Renders a single row in the List Stuff table. See pages/ListReports.jsx. */
+class ReportsItem extends React.Component {
   state = { open: false }
 
   show = () => this.setState({ open: true })
@@ -27,23 +27,13 @@ class ReportsItemAdmin extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
-            <Card.Header>{this.props.report.tag}</Card.Header>
-            <Card.Meta>{`Location: ${this.props.report.location}`}</Card.Meta>
-            <Card.Meta>{`Email: ${this.props.report.owner}`}</Card.Meta>
-            <Card.Meta>{`Status: ${this.props.report.status}`}</Card.Meta>
+            <Card.Header>{this.props.report.Location}</Card.Header>
+            <Card.Meta>{this.props.report.tag}</Card.Meta>
+            <Card.Meta>{this.props.report.email}</Card.Meta>
             <Card.Description>
               {this.props.report.description}
             </Card.Description>
-            <Card.Content extra>
-              {this.props.report.owner}
-            </Card.Content>
-            <Card.Content extra>
-              <Link to={`/adminedit/${this.props.report._id}`}>Edit</Link>
-            </Card.Content>
             <Card.Content align='right'>
-              <Button icon onClick={this.show}>
-                <Icon name='trash alternate outline'/>
-              </Button>
               <Confirm
                   open={open}
                   onCancel={this.handleCancel}
@@ -57,9 +47,10 @@ class ReportsItemAdmin extends React.Component {
 }
 
 /** Require a document to be passed to this component. */
-ReportsItemAdmin.propTypes = {
+ReportsItem.propTypes = {
   report: PropTypes.object.isRequired,
   Reports: PropTypes.object.isRequired,
 };
 
-export default ReportsItemAdmin;
+/** Wrap this component in withRouter since we use the <Link> React Router element. */
+export default withRouter(ReportsItem);
