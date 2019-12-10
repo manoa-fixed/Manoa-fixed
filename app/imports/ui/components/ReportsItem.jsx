@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button, Icon, Confirm, Popup } from 'semantic-ui-react';
+import { Card, Image, Button, Icon, Confirm, Popup, PopupContent } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -32,13 +32,15 @@ class ReportsItem extends React.Component {
             <Card.Description>{this.props.report.description}</Card.Description>
             <Card.Meta>
               <Popup
-                  content={`Location: ${this.props.report.location}
-                      Submitted: ${this.props.report.datePosted.toLocaleDateString()}
-                      Submitter: ${this.props.report.owner}
-                      Status: ${this.props.report.status}`}
                   on='click'
-                  trigger={<Button content='View Attributes' />}
-              />
+                  trigger={<Button content='View Attributes' />}>
+                <PopupContent>
+                      <b>Location: </b> {this.props.report.location} <br/>
+                      <b>Submitted: </b> {this.props.report.datePosted.toLocaleDateString()} <br/>
+                      <b>Submitter: </b>{ this.props.report.owner} <br/>
+                      <b>Status: </b> {this.props.report.status}
+                </PopupContent>
+              </Popup>
             </Card.Meta>
             <Card.Content extra>
               <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
