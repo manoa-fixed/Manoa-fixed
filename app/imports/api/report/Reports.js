@@ -18,7 +18,7 @@ const ReportsSchema = new SimpleSchema({
   },
   status: {
     type: String,
-    allowedValues: ['Pending', 'In-Progress...', 'Fixed'],
+    allowedValues: ['Pending', 'In-Progress...', 'Fixed!'],
     defaultValue: 'Pending',
   },
   description: {
