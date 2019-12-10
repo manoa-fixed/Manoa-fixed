@@ -131,7 +131,7 @@ class AddReport extends React.Component {
                 </Form.Group>
                 <Form.Group widths={'equal'}>
                 <React.Fragment>
-                  <Grid.Column width={2}><b>Image</b></Grid.Column>
+                  <Grid.Column width={2}><b>Image</b><b className="redText">*</b></Grid.Column>
                   <Grid.Column width={2}>
                     <Image src={picture} style={imageStyle} floated="left"/>
                     <Button basic={true} color="green" onClick={this.handleUploadPicture}>Upload</Button>
