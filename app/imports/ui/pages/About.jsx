@@ -43,8 +43,6 @@ class About extends React.Component {
                 just click the &quot;keep me anonymous&quot; button.
                 You can comeback to your report to check up on it anonymously with the report number.
                 Start a new report with the button below.</Header>
-
-              <Header as='h1' inverted> Welcome! </Header>
               <Header as='h3' inverted>Manoa Fixed is an online web-tool
                 designed to help create and organize campus maintenance related
                 reports into one single source. If you are on campus and see
