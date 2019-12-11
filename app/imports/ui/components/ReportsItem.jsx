@@ -29,7 +29,7 @@ class ReportsItem extends React.Component {
         color = 'yellow';
         break;
       case 'Fixed!':
-        color = 'Green';
+        color = 'green';
         break;
       default:
         color = 'red';

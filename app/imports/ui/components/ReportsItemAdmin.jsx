@@ -28,7 +28,7 @@ class ReportsItemAdmin extends React.Component {
         color = 'yellow';
         break;
       case 'Fixed!':
-        color = 'Green';
+        color = 'green';
         break;
       default:
         color = 'red';
@@ -59,10 +59,7 @@ class ReportsItemAdmin extends React.Component {
               </Popup>
             </Card.Meta>
             <Card.Content extra>
-              {this.props.report.owner}
-            </Card.Content>
-            <Card.Content extra>
-              <Link to={`/adminedit/${this.props.report._id}`}>Edit</Link>
+              <Link to={`/adminedit/${this.props.report._id}`}>Update Status</Link>
             </Card.Content>
             <Card.Content align='right'>
               <Button icon onClick={this.show}>
