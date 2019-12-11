@@ -25,11 +25,11 @@ class AddReport extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { location, datePosted, tag, description, status } = data;
+    const { title, location, datePosted, tag, description, status } = data;
     const image = this.state.picture;
     const owner = Meteor.user().username;
     console.log(data);
-    Reports.insert({ location, datePosted, image, tag, description, owner, status },
+    Reports.insert({ title, location, datePosted, image, tag, description, owner, status },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
@@ -73,6 +73,7 @@ class AddReport extends React.Component {
 
     /** Create a schema to specify the structure of the data to appear in the form. */
    const formSchema = new SimpleSchema({
+      title: String,
       location: String,
       datePosted: { type: Date, defaultValue: new Date() },
       tag: {
@@ -125,6 +126,7 @@ class AddReport extends React.Component {
             <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
                 <Form.Group widths={'equal'}>
+                  <TextField name='title'/>
                 <TextField name='location'/>
                 <SelectField name='tag'/>
                 <HiddenField name='status'/>

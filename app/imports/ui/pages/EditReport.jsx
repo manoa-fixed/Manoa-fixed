@@ -24,9 +24,9 @@ class EditReport extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { location, tag, description, _id } = data;
+    const { title, location, tag, description, _id } = data;
     const image = this.state.picture;
-    Reports.update(_id, { $set: { location, image, tag, description } }, (error) => (error ?
+    Reports.update(_id, { $set: { title, location, image, tag, description } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -68,6 +68,7 @@ class EditReport extends React.Component {
             <AutoForm schema={ReportsSchema} onSubmit={data => this.submit(data)}
                       model={this.props.doc}>
               <Segment>
+                <TextField name='title'/>
                 <TextField name='location'/>
                 <SelectField name='tag'/>
                 <React.Fragment>

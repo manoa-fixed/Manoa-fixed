@@ -7,9 +7,13 @@ const Reports = new Mongo.Collection('Reports');
 
 /** Define a schema to specify the structure of each document in the collection. */
 const ReportsSchema = new SimpleSchema({
+  title: String,
   location: String,
   datePosted: { type: Date, defaultValue: new Date() },
-  image: String,
+  image: {
+    type: String,
+    defaultValue: 'https://res.cloudinary.com/togaquest/image/upload/v1576029113/NullIsland_gepzsu.jpg',
+  },
   tag: {
     type: String,
     allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',

@@ -28,7 +28,8 @@ class ReportsItem extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
-            <Card.Header>{this.props.report.tag}</Card.Header>
+            <Card.Header>{this.props.report.title}</Card.Header>
+            <Card.Meta>{this.props.report.tag}</Card.Meta>
             <Card.Description>{this.props.report.description}</Card.Description>
             <Card.Meta>
               <Popup
