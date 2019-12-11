@@ -43,7 +43,7 @@ class ReportsItem extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
-            {this.props.report.tag.map((t, index) => (<Label style = {{margin:5}} key = {index}>{t}</Label>))}
+            {this.props.report.tag.map((t, index) => (<Label style = {{ margin: 5 }} key = {index}>{t}</Label>))}
             <Card.Description>{this.props.report.description}</Card.Description>
             <Card.Meta>
               <Popup

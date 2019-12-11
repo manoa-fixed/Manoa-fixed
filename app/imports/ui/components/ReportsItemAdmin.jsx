@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button, Icon, Confirm } from 'semantic-ui-react';
+import { Card, Image, Button, Icon, Confirm, Label, Popup, PopupContent } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -19,6 +19,20 @@ class ReportsItemAdmin extends React.Component {
 
   render() {
     const { open } = this.state;
+    let color;
+    switch (this.props.report.status) {
+      case 'Pending':
+        color = 'blue';
+        break;
+      case 'In-Progress...':
+        color = 'yellow';
+        break;
+      case 'Fixed':
+        color = 'Green';
+        break;
+      default:
+        color = 'red';
+    }
     return (
         <Card>
           <Card.Content>
@@ -27,13 +41,22 @@ class ReportsItemAdmin extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
-            <Card.Header>{this.props.report.tag}</Card.Header>
-            <Card.Meta>{`Location: ${this.props.report.location}`}</Card.Meta>
-            <Card.Meta>{`Email: ${this.props.report.owner}`}</Card.Meta>
-            <Card.Meta>{`Status: ${this.props.report.status}`}</Card.Meta>
+            {this.props.report.tag.map((t, index) => (<Label style = {{ margin: 5 }} key = {index}>{t}</Label>))}
             <Card.Description>
               {this.props.report.description}
             </Card.Description>
+            <Card.Meta>
+              <Popup
+                  on='click'
+                  trigger={<Button content='View Attributes' />}>
+                <PopupContent>
+                  <b>Location: </b> {this.props.report.location} <br/>
+                  <b>Submitted: </b> {this.props.report.datePosted.toLocaleDateString()} <br/>
+                  <b>Submitter: </b>{ this.props.report.owner} <br/>
+                  <b>Status: </b> <Label color={color}>{this.props.report.status}</Label>
+                </PopupContent>
+              </Popup>
+            </Card.Meta>
             <Card.Content extra>
               {this.props.report.owner}
             </Card.Content>

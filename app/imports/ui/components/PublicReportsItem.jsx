@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Image, Button, Icon, Confirm } from 'semantic-ui-react';
+import { Card, Image, Button, Label, Popup, PopupContent } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListReports.jsx. */
 class ReportsItem extends React.Component {
@@ -18,7 +18,20 @@ class ReportsItem extends React.Component {
   handleCancel = () => this.setState({ open: false })
 
   render() {
-    const { open } = this.state;
+    let color;
+    switch (this.props.report.status) {
+      case 'Pending':
+        color = 'blue';
+        break;
+      case 'In-Progress...':
+        color = 'yellow';
+        break;
+      case 'Fixed':
+        color = 'Green';
+        break;
+      default:
+        color = 'red';
+    }
     return (
         <Card>
           <Card.Content>
@@ -27,19 +40,22 @@ class ReportsItem extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
-            <Card.Header>{this.props.report.Location}</Card.Header>
-            <Card.Meta>{this.props.report.tag}</Card.Meta>
-            <Card.Meta>{this.props.report.email}</Card.Meta>
+            {this.props.report.tag.map((t, index) => (<Label style = {{ margin: 5 }} key = {index}>{t}</Label>))}
             <Card.Description>
               {this.props.report.description}
             </Card.Description>
-            <Card.Content align='right'>
-              <Confirm
-                  open={open}
-                  onCancel={this.handleCancel}
-                  onConfirm={this.removeItem}
-              />
-            </Card.Content>
+            <Card.Meta>
+              <Popup
+                  on='click'
+                  trigger={<Button content='View Attributes' />}>
+                <PopupContent>
+                  <b>Location: </b> {this.props.report.location} <br/>
+                  <b>Submitted: </b> {this.props.report.datePosted.toLocaleDateString()} <br/>
+                  <b>Submitter: </b>{ this.props.report.owner} <br/>
+                  <b>Status: </b> <Label color={color}>{this.props.report.status}</Label>
+                </PopupContent>
+              </Popup>
+            </Card.Meta>
           </Card.Content>
         </Card>
     );
