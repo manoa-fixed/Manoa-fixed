@@ -4,7 +4,6 @@ import { Reports, ReportsSchema } from '/imports/api/report/Reports';
 import swal from 'sweetalert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
-import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
@@ -14,6 +13,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2';
 import { openCloudinaryWidget } from '../components/open-cloudinary-widget';
+import MultiSelect from '../components/MultiSelect';
 
 /** Renders the Page for editing a single document. */
 class EditReport extends React.Component {
@@ -70,7 +70,7 @@ class EditReport extends React.Component {
               <Segment>
                 <TextField name='title'/>
                 <TextField name='location'/>
-                <SelectField name='tag'/>
+                <MultiSelect name='tag'/>
                 <React.Fragment>
                   <Grid.Column width={2}><b>Image</b></Grid.Column>
                   <Grid.Column width={2}>

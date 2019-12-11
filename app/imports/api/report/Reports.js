@@ -15,10 +15,12 @@ const ReportsSchema = new SimpleSchema({
     defaultValue: 'https://res.cloudinary.com/togaquest/image/upload/v1576029113/NullIsland_gepzsu.jpg',
   },
   tag: {
+    type: Array,
+  },
+  'tag.$': {
     type: String,
     allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
       'Electrical', 'Lost & Found', 'Miscellaneous'],
-    defaultValue: 'Structural',
   },
   status: {
     type: String,
