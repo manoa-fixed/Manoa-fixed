@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Segment, Header, Button, Image, Form } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
-import SelectField from 'uniforms-semantic/SelectField';
+import MultiSelect from '../components/MultiSelect';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
@@ -76,10 +76,13 @@ class AddReport extends React.Component {
       location: String,
       datePosted: { type: Date, defaultValue: new Date() },
       tag: {
+        type: Array,
+
+      },
+      'tag.$': {
         type: String,
         allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
           'Electrical', 'Lost & Found', 'Miscellaneous'],
-        defaultValue: 'Structural',
       },
       description: {
         type: String,
@@ -126,7 +129,7 @@ class AddReport extends React.Component {
               <Segment>
                 <Form.Group widths={'equal'}>
                 <TextField name='location'/>
-                <SelectField name='tag'/>
+                <MultiSelect name='tag'/>
                 <HiddenField name='status'/>
                 </Form.Group>
                 <Form.Group widths={'equal'}>

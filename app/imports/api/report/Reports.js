@@ -11,10 +11,12 @@ const ReportsSchema = new SimpleSchema({
   datePosted: { type: Date, defaultValue: new Date() },
   image: String,
   tag: {
+    type: Array,
+  },
+  'tag.$': {
     type: String,
     allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
       'Electrical', 'Lost & Found', 'Miscellaneous'],
-    defaultValue: 'Structural',
   },
   status: {
     type: String,

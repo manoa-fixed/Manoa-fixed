@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button, Icon, Confirm, Popup, PopupContent } from 'semantic-ui-react';
+import { Card, Image, Button, Icon, Confirm, Popup, PopupContent, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -20,6 +20,21 @@ class ReportsItem extends React.Component {
   render() {
     const { open } = this.state;
     console.log(this.props.report);
+    let color;
+    switch (this.props.report.status) {
+      case 'Pending':
+        color = 'blue';
+        break;
+      case 'In-Progress...':
+        color = 'yellow';
+        break;
+      case 'Fixed':
+        color = 'Green';
+        break;
+      default:
+        color = 'red';
+    }
+
     return (
         <Card>
           <Card.Content>
@@ -28,7 +43,7 @@ class ReportsItem extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
-            <Card.Header>{this.props.report.tag}</Card.Header>
+            {this.props.report.tag.map((t, index) => (<Label style = {{margin:5}} key = {index}>{t}</Label>))}
             <Card.Description>{this.props.report.description}</Card.Description>
             <Card.Meta>
               <Popup
@@ -38,7 +53,7 @@ class ReportsItem extends React.Component {
                       <b>Location: </b> {this.props.report.location} <br/>
                       <b>Submitted: </b> {this.props.report.datePosted.toLocaleDateString()} <br/>
                       <b>Submitter: </b>{ this.props.report.owner} <br/>
-                      <b>Status: </b> {this.props.report.status}
+                  <b>Status: </b> <Label color={color}>{this.props.report.status}</Label>
                 </PopupContent>
               </Popup>
             </Card.Meta>
