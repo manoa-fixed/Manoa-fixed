@@ -5,12 +5,21 @@ import { Reports } from '/imports/api/report/Reports';
 import ReportsItem from '/imports/ui/components/ReportsItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import SimpleSchema from 'simpl-schema';
+import AutoForm from 'uniforms-semantic/AutoForm';
+import MultiSelect from '../components/MultiSelect';
 
-const HoverText = styled.b`color: #000; :hover {color: #ffffff;cursor: pointer;}z`;
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListReports extends React.Component {
+  state = { query: '' };
+
+  handleInputChange = (key, value) => {
+    // this.setState({
+    //   query: this.search.value,
+    // });
+    console.log(key, value);
+  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -19,16 +28,24 @@ class ListReports extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const formSchema = new SimpleSchema({
+      Search: Array,
+      'Search.$': {
+        type: String,
+        allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
+          'Electrical', 'Lost & Found', 'Miscellaneous'],
+      },
+    });
     console.log(this.props);
+    let fRef = null;
     return (
         <Container>
           <Header as="h2" textAlign="center" inverted>List Reports</Header>
           <Header as="h3">
-            <Input inverted name = 'search' placeholder='Search...' />
-            <Button color="orange" size='big' as={NavLink}
-                    activeClassName="active" exact to="/add" key='add'><HoverText>Go</HoverText>
-            </Button>
-             </Header>
+            <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onChange={this.handleInputChange}>
+            <MultiSelect inverted name='Search' />
+            </AutoForm>
+          </Header>
           <Card.Group>
             {this.props.reports.map((report, index) => <ReportsItem key={index} report={report} Reports={Reports}/>)}
           </Card.Group>
