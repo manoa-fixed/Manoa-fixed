@@ -17,24 +17,21 @@ class About extends React.Component {
         <div className='wallpaper-background'>
           <Grid verticalAlign='middle' textAlign='Left' container style={darkbstyle}>
             <Grid.Column width={15}>
-              <Header as='h1' inverted>Welcome to Manoa Fixed</Header>
+              <Header as='h1' inverted>About Manoa Fixed</Header>
               <iframe width="1120" height="630" src="https://www.youtube.com/embed/PFD2BpQvaf8" frameBorder="0"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen></iframe>
               <Header as='h3' inverted>
                 <Header as='h1' inverted> Welcome! </Header>
-                This is an online application to report problems that happends at UH.
-                Some of the common problems are: Broken lights, Broken equiptment, lost item,
-                and hazards such as broken glass on the ground.
+                <Header as='h3' inverted>Manoa Fixed is an online web-tool designed
+                to help create and organize campus maintenance related
+                reports into one single source. If you are on campus
+                and see anything that needs upkeeping (potholes, broken railings,
+                flickering lights,Broken equiptment,lost item, etc), please feel free to click on our
+                Add Report Button below to begin a report.</Header>
                 Use this app to suggest the college about how it can improve!
                 Take a photo on your phone, upload it to your desktop,
                 add tags and description and click the report button to send us your report!
-                <Header as='h3' inverted>Manoa Fixed is an online web-tool designed
-                  to help create and organize campus maintenance related
-                  reports into one single source. If you are on campus
-                  and see anything that needs upkeeping (potholes, broken railings,
-                  flickering lights, etc), please feel free to click on our
-                  Add Report Button below to begin a report.</Header>
                 Realize anyway the university can improve? Send us your suggestion!
                 You can make an account to get back notifications on your report.
                 Start a new report with the button below.</Header>
