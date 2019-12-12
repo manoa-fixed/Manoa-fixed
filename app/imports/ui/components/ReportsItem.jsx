@@ -23,16 +23,16 @@ class ReportsItem extends React.Component {
     let color;
     switch (this.props.report.status) {
       case 'Pending':
-        color = 'blue';
+        color = 'orange';
         break;
       case 'In-Progress...':
-        color = 'yellow';
+        color = 'blue';
         break;
       case 'Fixed!':
         color = 'green';
         break;
       default:
-        color = 'red';
+        color = 'gray';
     }
 
     return (
@@ -50,7 +50,7 @@ class ReportsItem extends React.Component {
             <Card.Meta>
               <Popup
                   on='click'
-                  trigger={<Button content='View Attributes' />}>
+                  trigger={<Button style = {{ margin: 8 }} content='View Attributes' />}>
                 <PopupContent>
                       <b>Location: </b> {this.props.report.location} <br/>
                       <b>Submitted: </b> {this.props.report.datePosted.toLocaleDateString()} <br/>
@@ -59,7 +59,7 @@ class ReportsItem extends React.Component {
               </Popup>
             </Card.Meta>
             <Card.Content extra>
-              <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
+              <Link style = {{ marginTop: 15 }} to={`/edit/${this.props.report._id}`}>Edit</Link>
             </Card.Content>
             <Card.Content align='right'>
               <Button icon onClick={this.show}>
