@@ -25,7 +25,7 @@ class ListReports extends React.Component {
           <Header as="h2" textAlign="center" inverted>List Reports</Header>
           <Header as="h3">
             <Input inverted name = 'search' placeholder='Search...' />
-            <Button color="orange" size='big' as={NavLink}
+             <Button color="orange" size='big' as={NavLink}
                     activeClassName="active" exact to="/add" key='add'><HoverText>Go</HoverText>
             </Button>
              </Header>
