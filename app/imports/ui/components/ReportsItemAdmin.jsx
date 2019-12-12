@@ -27,8 +27,8 @@ class ReportsItemAdmin extends React.Component {
       case 'In-Progress...':
         color = 'yellow';
         break;
-      case 'Fixed':
-        color = 'Green';
+      case 'Fixed!':
+        color = 'green';
         break;
       default:
         color = 'red';
@@ -41,6 +41,8 @@ class ReportsItemAdmin extends React.Component {
                 size='large'
                 src={this.props.report.image}
             />
+            <Card.Header>{this.props.report.title}</Card.Header>
+            <b>Status: </b> <Label color={color}>{this.props.report.status}</Label><br/>
             {this.props.report.tag.map((t, index) => (<Label style = {{ margin: 5 }} key = {index}>{t}</Label>))}
             <Card.Description>
               {this.props.report.description}
@@ -53,15 +55,11 @@ class ReportsItemAdmin extends React.Component {
                   <b>Location: </b> {this.props.report.location} <br/>
                   <b>Submitted: </b> {this.props.report.datePosted.toLocaleDateString()} <br/>
                   <b>Submitter: </b>{ this.props.report.owner} <br/>
-                  <b>Status: </b> <Label color={color}>{this.props.report.status}</Label>
                 </PopupContent>
               </Popup>
             </Card.Meta>
             <Card.Content extra>
-              {this.props.report.owner}
-            </Card.Content>
-            <Card.Content extra>
-              <Link to={`/adminedit/${this.props.report._id}`}>Edit</Link>
+              <Link to={`/adminedit/${this.props.report._id}`}>Update Status</Link>
             </Card.Content>
             <Card.Content align='right'>
               <Button icon onClick={this.show}>
