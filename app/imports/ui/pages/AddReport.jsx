@@ -75,15 +75,14 @@ class AddReport extends React.Component {
    const formSchema = new SimpleSchema({
       title: {
       type: String,
-          defaultValue: '35 character limit',
           max: 35,
     },
       location: {
         type: String,
-        defaultValue: '35 character limit',
         max: 35,
       },
-      datePosted: { type: Date,
+      datePosted: {
+        type: Date,
         defaultValue: new Date(),
       },
       tag: {
@@ -97,7 +96,6 @@ class AddReport extends React.Component {
       },
       description: {
         type: String,
-        defaultValue: 'describe the event here',
       },
       image: {
         type: String,
@@ -124,9 +122,9 @@ class AddReport extends React.Component {
             <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
                 <Form.Group widths={'equal'}>
-                  <TextField name='title'/>
-                <TextField name='location'/>
-                <MultiSelect name='tag'/>
+                  <TextField name='title' placeholder= '35 character limit' />
+                <TextField name='location' placeholder= '35 character limit' />
+                <MultiSelect name='tag' placeholder= 'Select one or multiple' />
                 <HiddenField name='status'/>
                 </Form.Group>
                 <Form.Group widths={'equal'}>
@@ -137,7 +135,7 @@ class AddReport extends React.Component {
                     <Button basic={true} color="green" onClick={this.handleUploadPicture}>Upload</Button>
                   </Grid.Column>
                 </React.Fragment>
-                  <LongTextField name='description'/>
+                  <LongTextField name='description' placeholder= 'Describe the event here...' />
                 </Form.Group>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

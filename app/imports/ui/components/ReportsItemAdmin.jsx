@@ -31,7 +31,7 @@ class ReportsItemAdmin extends React.Component {
         color = 'green';
         break;
       default:
-        color = 'red';
+        color = 'gray';
     }
     return (
         <Card>
