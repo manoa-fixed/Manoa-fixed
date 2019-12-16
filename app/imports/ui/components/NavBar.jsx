@@ -20,7 +20,6 @@ class NavBar extends React.Component {
               <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>My Reports</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/listall"
                          key='listall'>All Reports</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/map" key='map'>View Map</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/about" key='about'>About Us</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/donate" key='donate'>Donate</Menu.Item>,
             ]
