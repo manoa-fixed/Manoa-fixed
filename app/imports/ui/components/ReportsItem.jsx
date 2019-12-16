@@ -23,10 +23,10 @@ class ReportsItem extends React.Component {
     let color;
     switch (this.props.report.status) {
       case 'Pending':
-        color = 'orange';
+        color = 'blue';
         break;
       case 'In-Progress...':
-        color = 'blue';
+        color = 'yellow';
         break;
       case 'Fixed!':
         color = 'green';
