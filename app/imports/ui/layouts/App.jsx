@@ -17,7 +17,6 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Donate from '../pages/Donate';
-import map from '../pages/Geo';
 import About from '../pages/About';
 import ListReportsAll from '../pages/ListReportsAll';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -30,7 +29,6 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route exact path="/about" component={About}/>
-              <Route exact path="/map" component={map}/>
               <Route exact path="/donate" component={Donate}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
