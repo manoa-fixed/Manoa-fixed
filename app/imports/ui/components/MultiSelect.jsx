@@ -45,7 +45,6 @@ const renderDropdown = ({ allowedValues, disabled, placeholder, onChange, transf
                 options={options} onChange={(event, data) => onChange(data.value)} value={value}/>
   );
 };
-
 const MultiSelect = ({
                        allowedValues,
                        checkboxes,
