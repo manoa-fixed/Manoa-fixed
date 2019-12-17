@@ -5,7 +5,6 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Reports } from '/imports/api/report/Reports';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import SimpleSchema from 'simpl-schema';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import MultiSelect from '../components/MultiSelect';
