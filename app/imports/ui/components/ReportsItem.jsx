@@ -19,7 +19,6 @@ class ReportsItem extends React.Component {
 
   render() {
     const { open } = this.state;
-    console.log(this.props.report);
     let color;
     switch (this.props.report.status) {
       case 'Pending':
