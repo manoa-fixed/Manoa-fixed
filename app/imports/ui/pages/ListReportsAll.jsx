@@ -57,7 +57,7 @@ class ListReportsAll extends React.Component {
             <AutoForm ref={ref => {
               fRef = ref;
             }} schema={formSchema} onChange={this.handleInputChange}>
-              <MultiSelect name='Search'/>
+              <MultiSelect name='Search' placeholder= 'Filter tagging'/>
             </AutoForm>
           </Header>
           <Card.Group>
