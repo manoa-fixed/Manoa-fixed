@@ -91,7 +91,7 @@ class AddReport extends React.Component {
       },
       'tag.$': {
         type: String,
-        allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
+        allowedValues: ['Vandalism', 'Water Damage', 'Fire Damage', 'Structural', 'Natural/Plants',
           'Electrical', 'Lost & Found', 'Miscellaneous'],
       },
       description: {

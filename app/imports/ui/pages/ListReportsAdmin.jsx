@@ -33,7 +33,7 @@ class ListReports extends React.Component {
       Search: { type: Array, optional: true },
       'Search.$': {
         type: String,
-        allowedValues: ['Vandalism', 'Water Damage', 'Structural', 'Natural/Plants',
+        allowedValues: ['Vandalism', 'Water Damage', 'Fire Damage', 'Structural', 'Natural/Plants',
           'Electrical', 'Lost & Found', 'Miscellaneous'],
       },
     });
