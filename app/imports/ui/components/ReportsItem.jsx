@@ -43,7 +43,6 @@ class ReportsItem extends React.Component {
                 src={this.props.report.image}
             />
             <Card.Header>{this.props.report.title}</Card.Header>
-            <b>Status: </b> <Label color={color}>{this.props.report.status}</Label><br/>
             {this.props.report.tag.map((t, index) => (<Label style = {{ margin: 5 }} key = {index}>{t}</Label>))}
             <Card.Description>{this.props.report.description}</Card.Description>
             <Card.Meta>
@@ -51,6 +50,7 @@ class ReportsItem extends React.Component {
                   on='click'
                   trigger={<Button style = {{ margin: 8 }} content='View Attributes' />}>
                 <PopupContent>
+                      <b>Status: </b> <Label color={color}>{this.props.report.status}</Label><br/>
                       <b>Location: </b> {this.props.report.location} <br/>
                       <b>Submitted: </b> {this.props.report.datePosted.toLocaleDateString()} <br/>
                       <b>Submitter: </b>{ this.props.report.owner} <br/>
